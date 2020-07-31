@@ -49,13 +49,13 @@ Time frames are also key in the development cycle.  You have limited time to cod
 #### MVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Hamburger | H | 1hr | -hr | -hr|
-| Gridding | H | 2hrs | -hr | -hr|
-| Regular Nav | H | 2hrs | -hr | -hr|
-| Content placement| H | 4hrs | -hr | -hr|
+| Hamburger | H | hr | -hr | -hr|
+| Gridding | H | hrs | -hr | -hr|
+| Regular Nav | H | hrs | -hr | -hr|
+| Content placement| H | hrs | -hr | -hr|
 | Working with APIS | H | 6hrs| -hr | -hr |
 | Responsive | H | 5hrs | -hr | -hr|
-| Social Media Icons | L | 1hr | -hr | -hr|
+| Social Media Icons | L | hr | -hr | -hr|
 | Total | H | 25hrs| -hrs | -hrs |
 
 #### PostMVP
