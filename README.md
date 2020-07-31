@@ -14,6 +14,9 @@ For this project, I will be making an e-commerce for gorcery store with receipes
 - https://res.cloudinary.com/dcrioc0sw/image/upload/v1596157130/Screen_Shot_2020-07-30_at_8.55.29_PM_dnkfqu.png
 Wireframing Resources:
 - [Wireframe.cc](https://wireframe.cc/)
+Mobile wireframes--https://res.cloudinary.com/dcrioc0sw/image/upload/v1596214729/116758901_1786019178204956_7205303518657890628_n_zmzjfb.jpg
+Desktop wireframes--https://res.cloudinary.com/dcrioc0sw/image/upload/v1596214742/116717190_2376076882696316_6305453759453254204_n_ttczc7.jpg
+Ipad wireframes --https://res.cloudinary.com/dcrioc0sw/image/upload/v1596214756/116423507_3296949596994032_879395362469809829_n_l33mss.jpg
 ## Time/Priority Matrix 
 Include a full list of features that have been [prioritized](https://res.cloudinary.com/doaftkgbv/image/upload/v1583773146/ValueVSComplexity_u2inhx.png) based on the `Time and Priority` Matix.  This involves drawing a a square.  In the middle of the square, on the x axis draw a line.  The most left part of the line should start with 0hrs and the end of the line should include 2hrs.  This line will be used to estimate how much time any one feature will take to complete. 
 Now draw a vertical line on the y axis.  The top of this line should have `High` and the bottom `Low`.  This line will be used to assign a priority to to each feature you wish to include in the project.  
