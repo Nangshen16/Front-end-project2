@@ -3,9 +3,26 @@ const $addIngredientsButton = $('.ingredientsControl button')
 const $addShoppingcartsButton = $('.ShoppingControl button')
 const URL= "http://localhost:3000"
 
-const $ul = $('ul')
+const $ul = $(`<ul>`)
 
-const getShoppingcarts = async() => {   
+const placeholderIngredient = "5f29cbe718237523c3130623"
+const cartName = "NSH"
+
+const addIngredients = async (cartName,ingredient) => {
+    console.log(cartName,ingredient)
+  const data = await fetch(`${URL}/shoppingcart/${cartName}`,{
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: ingredient
+  }) 
+}
+
+addIngredients(cartName,placeholderIngredient)
+
+const getShoppingcarts = async() => {  
+
     const data = await fetch(`${URL}/shoppingcart`)
        const response = await data.json()
        console.log(response)
@@ -15,21 +32,32 @@ const getShoppingcarts = async() => {
         $(`body`).append($ul)
         })
    }
-//getShoppingcarts()
+getShoppingcarts()
 $addShoppingcartsButton.on('click',getShoppingcarts)
 
 const getIngredients = async() => {
     const data = await fetch(`${URL}/grocery`)
     console.log(data)
     const response = await data.json()
+
     console.log(response)
+
     response.forEach(ingredients => {
-        $ingredients = $(`<li>`).text(`${ingredients.Name,ingredients[1].Price}`)
-        $ul.append($ingredients)
-        $(`.ingredients_container`).append($ul)
+        $div = $(`<div>`)
+        $name = $(`<p>`).text(ingredients.Name)
+        $price = $(`<p>`).text(ingredients.Price)
+        $addButton=$(`<button>`).text(`Add To Cart`)
+        $input = $(`<input>`).attr("placeholder",`Cart Name`)
+         $div.append($name,$price,$addButton,$input)
+         
+
+        //$ingredients = $(`<li>`).text(`${ingredients.Name} for ${ingredients.Price} dollars`).css("color","black")
+
+        //$ul.append($ingredients)
+        $(`#ingredients_container`).append($div)
     })
 }
-//getIngredients()
+getIngredients()
 $addIngredientsButton.on('click',getIngredients)
 
 /*fetch(`${URL}/shoppingcart`)
