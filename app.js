@@ -1,0 +1,44 @@
+//const Shoppingcart = require("../api/models/Shoppingcart")
+const $addIngredientsButton = $('.ingredientsControl button')
+const $addShoppingcartsButton = $('.ShoppingControl button')
+const URL= "http://localhost:3000"
+
+const $ul = $('ul')
+
+const getShoppingcarts = async() => {   
+    const data = await fetch(`${URL}/shoppingcart`)
+       const response = await data.json()
+       console.log(response)
+        response.forEach(shoppingcart => {
+        $shoppingcart = $(`<li>`).text(`${shoppingcart.ingredients[1].Name}`)
+        $ul.append($shoppingcart)
+        $(`body`).append($ul)
+        })
+   }
+//getShoppingcarts()
+$addShoppingcartsButton.on('click',getShoppingcarts)
+
+const getIngredients = async() => {
+    const data = await fetch(`${URL}/grocery`)
+    console.log(data)
+    const response = await data.json()
+    console.log(response)
+    response.forEach(ingredients => {
+        $ingredients = $(`<li>`).text(`${ingredients.Name,ingredients[1].Price}`)
+        $ul.append($ingredients)
+        $(`.ingredients_container`).append($ul)
+    })
+}
+//getIngredients()
+$addIngredientsButton.on('click',getIngredients)
+
+/*fetch(`${URL}/shoppingcart`)
+.then(console.log(response))
+.then(response => response.json())
+//.then(console.log(response))
+.then(data =>{
+    data.forEach(shoppingcart =>{
+        $shoppingcart = $(`<li>`).text(`${shoppingcart.name} is ${shoppingcart} is total`)
+        $ul.append($shoppingcart)
+    })
+})*/

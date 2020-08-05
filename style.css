@@ -1,0 +1,195 @@
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--title-color);
+    background-color: var(--accent-two);
+    border-bottom: var(--accent-one) 20px double;
+}
+.hd1 {
+    display: flex;
+    justify-content: flex-start;
+}
+.center {
+    display: flex;
+    height: 120px;
+    width: 200px;
+    margin-left: 50%;
+    justify-content: space-between;
+    color:blue;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 250px;
+    background-color:pink
+    border-bottom: 1px solid black;
+}
+.button {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    font-family: 'Press Start 2P', monospace;
+    color: var(--text-color);
+    background: var(--accent-one);
+    font-size: .8em;
+    border-radius: .4em;
+    padding: .6em .6em;
+    margin: .6em .4em;
+}
+.firstbox {
+    min-height: 40em;
+    display: flex;
+}
+.ingrdients {
+    max-width: 30em;
+    margin-right: 2em;
+}
+.ingrdientsL {
+    flex-grow: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+body {
+    font-family: 'Press Start 2P', monospace;
+    margin: 200px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h1 {
+    color:green;
+    font-family: Lato", "sans serif;
+
+}
+.top-nav-bar {
+    
+    height: 130px;
+    top:0;
+    position: sticky;
+    background-color:#3b6b4e ;
+    margin-button: 20px;
+    border-bottom: 3px solid navy;
+    z-index: 2;
+}
+.logo{
+    height: 20px;
+    margin: 5px 10px
+}
+.form-control {
+    margin-top: 9px;
+    margin-left: 30px;
+    border: 2px solid navy;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none;
+}
+.input-group-text {
+    background: navy;
+    border: 2px solid navy;
+    margin: 8.5px 10px 3px 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+
+
+}
+
+.search-box {
+    display: inline-flex;
+    width: 60%;
+}
+.fa fa-search {
+    color: navy;
+}
+
+.menu-bar{
+    width: 40%;
+    height: 57px;
+    float: right;
+}
+.menu-bar ul {
+    display: inline-flex;
+    float: right;
+}
+.menu-bar ul li {
+    border-left: 1px solid #fff;
+    list-style-type: none;
+    padding: 15px 35px;
+    text-align: center;
+    background-color: navy;
+    cursor: pointer;
+    
+
+}
+.menu-bar ul li a {
+    font-size: 20px;
+    font-weight: bold;
+    color:green;
+    text-decoration: none;
+}
+
+.shopping-cart {
+    margin-right: 10px;
+
+}
+@media only screen and (max-width:980px){
+    .top-nav-bar{
+        height: 118px;
+        border-bottom: 0;
+    }
+    .search-box {
+        width:100%;
+
+    }
+    .menu-bar{
+        width: 100%;
+    }
+    .menu-bar ul{
+        margin: 10px 0;
+        width: 100%;
+    }
+    .menu-bar ul li{
+        height: 57px;
+        width: 100%
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*@media (min-width: 1200px)*/
+
+
+.footer {
+    color:white;
+    margin-top: 5px;
+    margin-bottom: 200px;
+    min-height: 230px;
+    padding: 40px 0;
+    background-image:url(https://sve.vailschooldistrict.org/wp-content/uploads/sites/15/2019/09/dark-blue-grunge-background-caracterdesign.jpg) ;
+}
