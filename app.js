@@ -57,11 +57,11 @@ const getIngredients = async() => {
         $name = $(`<p>`).text(ingredient.Name)
         $price = $(`<p>`).text(ingredient.Price)
         
-        const ing = ingredient._id
-        console.log(ing)
+        const id = ingredient._id
+        console.log(id)
         
-        $input = $(`<input>`).attr("placeholder", `Cart Name`).attr(`class`, `whichCart`).on("change", ()=> saveCart());
-        $addButton = $(`<button>`).text(`Add to Cart`).on("click",() => addIngredients(cartName,ing ));
+        $input = $(`<input>`).attr("placeholder", `Cart Name`).attr(`id`, id).on("change", ()=> saveCart(id));
+        $addButton = $(`<button>`).text(`Add to Cart`).on("click",() => addIngredients(cartName,id ));
         $div.append($name,$price,$addButton,$input);
 
         $(`#ingredients_container`).append($div);
@@ -82,8 +82,8 @@ const getIngredients = async() => {
 getIngredients()
 getShoppingcarts()
 //$addIngredientsButton.on('click',getIngredients)
-const saveCart = () => {
-    cartName = $(".whichCart").val()
+const saveCart = (id) => {
+    cartName = $(`#${id}`).val()
 };
 
 //give the function the name of the cart and ingredient ObjectId  I want to add to cart
@@ -91,11 +91,11 @@ const addIngredients = async(cartName, ingredient) => {
     //use fetch with PUT method to update the cart
     console.log(`addingredients`,cartName,ingredient)
     const data = await fetch (`${URL}/shoppingcart/${cartName}`, {
-        method: "PUT",
-        header: {
+        method: "put",
+        headers: {
             "Content-Type": "application/json",
         },
-        body: (ingredient)
+        body: JSON.stringify([ingredient])
     });
 };
 
@@ -109,7 +109,7 @@ const createNewCart  = async () => {
         name :$(`#nameInput`).val()
     
     }
-    const response = await fetch (URL + `/shoppingcart`,
+    const response = await fetch (URL + `/`,
     {
         method: "POST",
         headers: {
