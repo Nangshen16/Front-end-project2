@@ -109,7 +109,7 @@ const createNewCart  = async () => {
         name :$(`#nameInput`).val()
     
     }
-    const response = await fetch (URL + `/`,
+    const response = await fetch (URL + `/shoppingcart`,
     {
         method: "POST",
         headers: {
