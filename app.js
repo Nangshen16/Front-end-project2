@@ -6,67 +6,96 @@ const URL= "http://localhost:3000"
 const $ul = $(`<ul>`)
 
 const placeholderIngredient = "5f29cbe718237523c3130623"
-const cartName = "NSH"
+let cartName = "NSH"
 
-const addIngredients = async (cartName,ingredient) => {
-    console.log(cartName,ingredient)
-  const data = await fetch(`${URL}/shoppingcart/${cartName}`,{
-      method: "PUT",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: ingredient
-  }) 
+
+const deleteCart = async(id) => {
+    const deleteCart = await fetch(`${URL}/shoppingcart/${id}`,{method:"DELETE"})
+    
 }
+const getShoppingcarts = async() => {
+    const data = await fetch (`${URL}/shoppingcart`);
+    const response = await data.json();
 
-addIngredients(cartName,placeholderIngredient)
+    console.log(response);
 
-const getShoppingcarts = async() => {  
+    response.forEach((cart)=> {
+        let cartTotal = 0
+        $div = $(`<div>`)
+        $name= $(`<h1>`).text(cart.name)
+        $ingredients = $("<div>");
+        cart.ingredients.forEach((ingredient) => {
+            $ingredientName = $("<p>").text(ingredient.Name);
+            $ingredientPrice = $(`<p>`).text(ingredient.Price)
+            $ingredients.append($ingredientName, $ingredientPrice);
+            cartTotal += ingredient.Price
+        });
+        $total = $(`<p>`).text(cartTotal)
+        const id = cart._id
+        $deleteButton = $(`<button>`).text(`Delete Cart`).on(`click`,()=> deleteCart(id));
+        $div.append($name,$ingredients, $total, $deleteButton);
 
-    const data = await fetch(`${URL}/shoppingcart`)
-       const response = await data.json()
-       console.log(response)
-        response.forEach(shoppingcart => {
-        $shoppingcart = $(`<li>`).text(`${shoppingcart.ingredients[1].Name}`)
-        $ul.append($shoppingcart)
-        $(`body`).append($ul)
-        })
-   }
-getShoppingcarts()
-$addShoppingcartsButton.on('click',getShoppingcarts)
+        $(`#carts_container`).append($div);
+    });
+};
+getShoppingcarts();
+
+
+
+
+
 
 const getIngredients = async() => {
-    const data = await fetch(`${URL}/grocery`)
+    const data = await fetch(`${URL}/grocery`);
     console.log(data)
     const response = await data.json()
 
     console.log(response)
 
-    response.forEach(ingredients => {
+    response.forEach(ingredient => {
         $div = $(`<div>`)
-        $name = $(`<p>`).text(ingredients.Name)
-        $price = $(`<p>`).text(ingredients.Price)
-        $addButton=$(`<button>`).text(`Add To Cart`)
-        $input = $(`<input>`).attr("placeholder",`Cart Name`)
-         $div.append($name,$price,$addButton,$input)
+        $name = $(`<p>`).text(ingredient.Name)
+        $price = $(`<p>`).text(ingredient.Price)
+        
+        const ing = ingredient._id
+        console.log(ing)
+        
+        $input = $(`<input>`).attr("placeholder", `Cart Name`).attr(`class`, `whichCart`).on("change", ()=> saveCart());
+        $addButton = $(`<button>`).text(`Add to Cart`).on("click",() => addIngredients(cartName,ing ));
+        $div.append($name,$price,$addButton,$input);
+
+        $(`#ingredients_container`).append($div);
+    });
+    };
+
+
+
+
+        //$input = $(`<input>`).attr("placeholder",`Cart Name`)
+         //$div.append($name,$price,$addButton,$input)
          
 
-        //$ingredients = $(`<li>`).text(`${ingredients.Name} for ${ingredients.Price} dollars`).css("color","black")
-
-        //$ul.append($ingredients)
-        $(`#ingredients_container`).append($div)
-    })
-}
+       
+        //$(`#ingredients_container`).append($div)
+    //})
+//}
 getIngredients()
-$addIngredientsButton.on('click',getIngredients)
+getShoppingcarts()
+//$addIngredientsButton.on('click',getIngredients)
+const saveCart = () => {
+    cartName = $(".whichCart").val()
+};
 
-/*fetch(`${URL}/shoppingcart`)
-.then(console.log(response))
-.then(response => response.json())
-//.then(console.log(response))
-.then(data =>{
-    data.forEach(shoppingcart =>{
-        $shoppingcart = $(`<li>`).text(`${shoppingcart.name} is ${shoppingcart} is total`)
-        $ul.append($shoppingcart)
-    })
-})*/
+//give the function the name of the cart and ingredient ObjectId  I want to add to cart
+const addIngredients = async(cartName, ingredient) => {
+    //use fetch with PUT method to update the cart
+    console.log(`addingredients`,cartName,ingredient)
+    const data = await fetch (`${URL}/shoppingcart/${cartName}`, {
+        method: "PUT",
+        header: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(ingredient)
+    });
+};
+
