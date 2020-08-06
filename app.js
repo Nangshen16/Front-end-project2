@@ -95,7 +95,31 @@ const addIngredients = async(cartName, ingredient) => {
         header: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(ingredient)
+        body: (ingredient)
     });
 };
+
+ //createCartForm ,input , button
+ 
+
+
+//create a new cart
+const createNewCart  = async () => {
+    const NewCart = {
+        name :$(`#nameInput`).val()
+    
+    }
+    const response = await fetch (URL + `/shoppingcart`,
+    {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(NewCart)
+    })
+    console.log(response)
+    
+}
+$("#addcarts").click(createNewCart)
+
 
