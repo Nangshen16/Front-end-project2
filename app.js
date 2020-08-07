@@ -1,7 +1,10 @@
 //const Shoppingcart = require("../api/models/Shoppingcart")
 const $addIngredientsButton = $('.ingredientsControl button')
 const $addShoppingcartsButton = $('.ShoppingControl button')
-const URL= "https://project2rachel.herokuapp.com"
+//const URL= "https://project2rachel.herokuapp.com"
+const URL = "http://localhost:3000"
+
+
 
 const $ul = $(`<ul>`)
 
@@ -61,7 +64,7 @@ const getIngredients = async() => {
         console.log(id)
         
         $input = $(`<input>`).attr("placeholder", `Cart Name`).attr(`id`, id).on("change", ()=> saveCart(id));
-        $addButton = $(`<button>`).text(`Add to Cart`).on("click",() => addIngredients(cartName,id ));
+        $addButton = $(`<button>`).text(`Add to Cart`).attr("class","addIngredientsbutton").on("click",() => addIngredients(cartName,id ));
         $div.append($name,$price,$addButton,$input);
 
         $(`#ingredients_container`).append($div);
@@ -80,7 +83,7 @@ const getIngredients = async() => {
     //})
 //}
 getIngredients()
-getShoppingcarts()
+
 //$addIngredientsButton.on('click',getIngredients)
 const saveCart = (id) => {
     cartName = $(`#${id}`).val()

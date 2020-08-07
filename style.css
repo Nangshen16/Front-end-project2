@@ -1,4 +1,46 @@
-.header{
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    margin-top:0 ;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: red;
+    text-align: center;
+    background-color: #fff;
+}
+div {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  grid-gap: 30px;
+  padding: 10px;
+
+
+    
+}
+input {
+border-width: 5px;
+border-color: #FF8882;
+
+}
+
+.addIngredientsbutton{
+    color:white;
+    background-color: #FFA384;
+    font-family: monospace;
+    
+}
+#ingredients_container {
+    color: green;
+    background-color: pink;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    border-bottom: 3px solid #FFA384;
+
+}
+
+header{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -7,30 +49,45 @@
     background-color: var(--accent-two);
     border-bottom: var(--accent-one) 20px double;
 }
+p {
+    text-align: center;
+    color:green;
+    font-size: 20px;
+
+    /*display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;*/
+    display: flex;
+    justify-content: flex-start;
+
+}
 .hd1 {
     display: flex;
     justify-content: flex-start;
 }
 .center {
-    display: flex;
-    height: 120px;
+    /*display: flex;*/
+    height: 130px;
     width: 200px;
-    margin-left: 50%;
+    margin-left: 600px;
     justify-content: space-between;
-    color:blue;
+    /*color:#543855;*/
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 250px;
-    background-color:pink
+    /*background-color:pink*/
     border-bottom: 1px solid black;
 }
-.button {
+button {
+    
+    background: #543855;
     display: flex;
-    justify-content: flex-end;
+    color:#E88D72;
+    justify-content:flex-start;
     cursor: pointer;
     font-family: 'Press Start 2P', monospace;
-    color: var(--text-color);
-    background: var(--accent-one);
+    /*color: var(--text-color);
+    background: var(--accent-one);*/
     font-size: .8em;
     border-radius: .4em;
     padding: .6em .6em;
@@ -47,7 +104,7 @@
 .ingrdientsL {
     flex-grow: 5;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
 body {
@@ -55,28 +112,32 @@ body {
     margin: 200px;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     
 }
 
 h1 {
-    color:green;
+    color:red;
     font-family: Lato", "sans serif;
 
 }
 .top-nav-bar {
     
-    height: 130px;
+    height: 160px;
+    width: 100%;
     top:0;
     position: sticky;
     background-color:#3b6b4e ;
-    margin-button: 20px;
+    
     border-bottom: 3px solid navy;
     z-index: 2;
 }
-.logo{
-    height: 20px;
-    margin: 5px 10px
+#logo{
+    position: center;
+    z-index: 2;
+    height: 200px;
+    /*width: 200px;*/
+    margin: 10px auto 0 auto;
 }
 .form-control {
     margin-top: 9px;
@@ -161,19 +222,10 @@ h1 {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media(max-width: 500px) {
+    header {
+        flex-direction: row;
+    }
 
 .container {
     max-width: 1080px;
@@ -184,12 +236,18 @@ h1 {
 }
 /*@media (min-width: 1200px)*/
 
+}
 
-.footer {
+
+
+
+
+
+/*footer {
     color:white;
     margin-top: 5px;
     margin-bottom: 200px;
     min-height: 230px;
     padding: 40px 0;
     background-image:url(https://sve.vailschooldistrict.org/wp-content/uploads/sites/15/2019/09/dark-blue-grunge-background-caracterdesign.jpg) ;
-}
+}*/
