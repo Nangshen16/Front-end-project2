@@ -298,16 +298,16 @@ h1 {
 
 }
 
-.fa.fa-linkedin {
+.fab fa-linkedin {
    font-family: "Font Awesome 5 Brands";
    font-weight: 400;
     
 }
-.fa.fa-github {
+.fab fa-github {
     font-family: "Font Awesome 5 Brands";
     font-weight: 400;
 }
-.far fa-inbox {
+.fa fa-inbox {
     font-family: "Font Awesome 5 Brands";
     font-weight: 400;
 }
@@ -508,4 +508,5 @@ svg {
     
         height: 247px;
         width: 100%;
+}
 }

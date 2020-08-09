@@ -1,8 +1,8 @@
 //const Shoppingcart = require("../api/models/Shoppingcart")
 const $addIngredientsButton = $('.ingredientsControl button')
 const $addShoppingcartsButton = $('.ShoppingControl button')
-//const URL= "https://project2rachel.herokuapp.com"
-const URL = "http://localhost:3000"
+const URL= "https://project2rachel.herokuapp.com"
+//const URL = "http://localhost:3000"
 
 
 
