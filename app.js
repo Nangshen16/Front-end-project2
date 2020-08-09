@@ -44,10 +44,6 @@ const getShoppingcarts = async() => {
 getShoppingcarts();
 
 
-
-
-
-
 const getIngredients = async() => {
     const data = await fetch(`${URL}/grocery`);
     console.log(data)
@@ -59,13 +55,13 @@ const getIngredients = async() => {
         $div = $(`<div>`)
         $name = $(`<p>`).text(ingredient.Name)
         $price = $(`<p>`).text(ingredient.Price)
-        
+        $ImageURL= $(`<p>`).text(ingredient.ImageURL)
         const id = ingredient._id
         console.log(id)
         
         $input = $(`<input>`).attr("placeholder", `Cart Name`).attr(`id`, id).on("change", ()=> saveCart(id));
         $addButton = $(`<button>`).text(`Add to Cart`).attr("class","addIngredientsbutton").on("click",() => addIngredients(cartName,id ));
-        $div.append($name,$price,$addButton,$input);
+        $div.append($name,$price,$ImageURL,$addButton,$input);
 
         $(`#ingredients_container`).append($div);
     });
@@ -125,4 +121,105 @@ const createNewCart  = async () => {
 }
 $("#addcarts").click(createNewCart)
 
-
+(function () {
+    /* In animations (to close icon) */
+  
+    const elasticIn = d3.easeElasticIn.amplitude(1).period(0.3);
+    const elasticOut = d3.easeElasticOut.amplitude(1).period(0.3);
+    const bounceOut = d3.easeBounceOut;
+  
+    var beginAC = 80,
+      endAC = 320,
+      beginB = 80,
+      endB = 320;
+  
+    function inAC(s) {
+      s.draw("80% - 240", "80%", 0.3, {
+        delay: 0.1,
+        callback: function () {
+          inAC2(s);
+        }
+      });
+    }
+  
+    function inAC2(s) {
+      s.draw("100% - 545", "100% - 305", 0.6, {
+        easing: elasticOut
+      });
+    }
+  
+    function inB(s) {
+      s.draw(beginB - 60, endB + 60, 0.1, {
+        callback: function () {
+          inB2(s);
+        }
+      });
+    }
+  
+    function inB2(s) {
+      s.draw(beginB + 120, endB - 120, 0.3, {
+        easing: bounceOut
+      });
+    }
+  
+    /* Out animations (to burger icon) */
+  
+    function outAC(s) {
+      s.draw("90% - 240", "90%", 0.1, {
+        easing: elasticIn,
+        callback: function () {
+          outAC2(s);
+        }
+      });
+    }
+  
+    function outAC2(s) {
+      s.draw("20% - 240", "20%", 0.3, {
+        callback: function () {
+          outAC3(s);
+        }
+      });
+    }
+  
+    function outAC3(s) {
+      s.draw(beginAC, endAC, 0.7, {
+        easing: elasticOut
+      });
+    }
+  
+    function outB(s) {
+      s.draw(beginB, endB, 0.7, {
+        delay: 0.1,
+        // easing: ease.ease("elastic-out", 2, 0.4),
+        easing: elasticOut
+      });
+    }
+  
+    /* Awesome burger default */
+  
+    var pathA = document.getElementById("pathA"),
+      pathB = document.getElementById("pathB"),
+      pathC = document.getElementById("pathC"),
+      segmentA = new Segment(pathA, beginAC, endAC),
+      segmentB = new Segment(pathB, beginB, endB),
+      segmentC = new Segment(pathC, beginAC, endAC),
+      trigger = document.getElementById("menu-icon-trigger"),
+      toCloseIcon = true,
+      wrapper = document.getElementById("menu-icon-wrapper");
+  
+    wrapper.style.visibility = "visible";
+  
+    trigger.onclick = function () {
+      if (toCloseIcon) {
+        inAC(segmentA);
+        inB(segmentB);
+        inAC(segmentC);
+      } else {
+        outAC(segmentA);
+        outB(segmentB);
+        outAC(segmentC);
+      }
+      toCloseIcon = !toCloseIcon;
+    };
+  })();
+  
