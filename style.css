@@ -9,6 +9,7 @@ body {
     text-align: center;
     background-color: #fff;
 }
+
 div {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -35,9 +36,12 @@ border-color: #FF8882;
     background-color: pink;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 5px;
     border-bottom: 3px solid #FFA384;
 
+}
+#carts_container{
+    
 }
 
 header{
@@ -68,7 +72,7 @@ p {
 .center {
     display: flex;
     justify-content: flex-start;
-    height: 150px;
+    height: auto;
     width: 200px;
     margin-bottom: 500px;
     margin-left: 100px;
@@ -125,14 +129,14 @@ h1 {
 }
 .top-nav-bar {
     
-    height: 247px;
+    height:auto;
     width: 100%;
     top:0;
     position: sticky;
     background-color:#3b6b4e ;
     
     border-bottom: 3px solid navy;
-    z-index: 2;
+    /*z-index: 2;*/
 }
 #logo{
     position: center;
