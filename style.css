@@ -457,7 +457,7 @@ svg {
   padding: 50px;
   padding-top: 125px;
   
-  background: #ededed;
+  /*background: #ededed;*/
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -509,4 +509,17 @@ svg {
         height: 247px;
         width: 100%;
 }
+ .footer {
+     display: flex;
+     flex-direction: row-reverse;
+ }
+ p{
+     display: flex;
+     flex-direction: row;
+ }
+ .socialIcons {
+     display: flex;
+     flex-direction: column-reverse;
+ }
+
 }
