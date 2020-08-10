@@ -9,7 +9,7 @@
 |Day 4| MVP & Bug Fixes | Incomplete
 |Day 5| Final Touches and Present | Incomplete
 ## Project Description
-For this project, I will be making an e-commerce for gorcery store with receipes. I will begin my backend api that will be responsible for bringing in the images or gifs to the front-end. I will then utilize jQuery to make on click buttons to have totals add up. 
+For this project, I will be making an e-commerce for gorcery store with receipes. I will begin my backend api that will be responsible for bringing   to the front-end. I will then utilize jQuery to make on click buttons to have totals add up. 
 ## Wireframes
 - https://res.cloudinary.com/dcrioc0sw/image/upload/v1596157130/Screen_Shot_2020-07-30_at_8.55.29_PM_dnkfqu.png
 Wireframing Resources:
