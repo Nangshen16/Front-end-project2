@@ -53,10 +53,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Gridding | H | hrs | -hr | -hr|
 | Regular Nav | H | hrs | -hr | -hr|
 | Content placement| H | hrs | -hr | -hr|
-| Working with APIS | H | 6hrs| -hr | -hr |
+| Working with APIS | H | 30hrs| -hr | -hr |
 | Responsive | H | 5hrs | -hr | -hr|
 | Social Media Icons | L | hr | -hr | -hr|
-| Total | H | 25hrs| -hrs | -hrs |
+| Total | H |hrs| -hrs | -hrs |
 
 #### PostMVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
